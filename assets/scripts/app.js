@@ -2,4 +2,6 @@ let currentResult = 0;
 
 currentResult = currentResult + (20 -5)  * 5;
 
-outputResult(currentResult, '') ;
+let calculationDescription = '(' +'currentResult' + '(20 -5)  * 5' +')';
+
+outputResult(currentResult, calculationDescription) ;
