@@ -3,13 +3,10 @@ let currentResult = defaultResult;
 
 function addNumbers(num1, num2){
     const result = num1 + num2;
-    alert('The result is ' + result);
+    return result;
 }
 
-addNumbers(4,3);
-addNumbers(2,9);
-
-currentResult = currentResult + (20 -5)  * 5;
+currentResult = addNumbers(4,3);
 
 let calculationDescription = '(' +'currentResult' + '(20 -5)  * 5' +')';
 
