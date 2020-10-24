@@ -4,7 +4,7 @@ let currentResult = defaultResult;
 
 
 function addNumbers(){
-     currentResult = currentResult + userInput.value;
+     currentResult = currentResult + +userInput.value;
     outputResult(currentResult, '') ;
 }
 
