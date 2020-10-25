@@ -24,8 +24,9 @@ function addNumbers(){
         prevResult : initialResult,
         number : enteredNumber,
         result : currentResult
-    }
+    };
     logEntries.push(logEntry);
+    console.log(logEntry.operation)
     console.log(logEntries);
 }    
 
