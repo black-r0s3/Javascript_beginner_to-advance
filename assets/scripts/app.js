@@ -13,6 +13,7 @@ function createAndWriteOutput(operator, resultBeforeCalc,calcNumber ){
     outputResult(currentResult, calcDescripton) ; //from vendor.js file
 }
 
+
 function writeToLog(operationIdentifier, prevResult, operationNumber, newResult){
     const logEntry = {
         operation : operationIdentifier,
@@ -25,21 +26,30 @@ function writeToLog(operationIdentifier, prevResult, operationNumber, newResult)
     console.log(logEntries);
 }
 
-
-function addNumbers(){
+function calculationResult(calculationType){
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
-    currentResult += enteredNumber;
-    createAndWriteOutput('+', initialResult, enteredNumber);
-    writeToLog('ADD', initialResult, enteredNumber, currentResult);
+    let mathOperator;
+    if (calculationType === "ADD"){
+        currentResult += enteredNumber;
+        mathOperator = '+'
+    } else{
+        currentResult -= enteredNumber;
+        mathOperator = '-'
+    }
+   
+    createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+    writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+}
+
+
+
+function addNumbers(){
+    calculationResult("ADD");
 }    
 
 function subtract(){
-    const enteredNumber = getUserNumberInput();
-    const initialResult = currentResult;
-    currentResult -= enteredNumber;
-    createAndWriteOutput('-', initialResult, enteredNumber);
-    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
+   calculationResult("SUBTRACT");
 }
 
 
